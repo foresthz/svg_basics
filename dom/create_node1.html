@@ -1,0 +1,66 @@
+
+
+<svg id="svg0" width=300 height=300>
+</svg>
+
+<script type="text/javascript">
+class Line {
+	constructor(x1, y1, x2, y2, stroke) {
+		this.x1 = x1;
+		this.y1 = y1;
+		this.x2 = x2;
+		this.y2 = y2;
+		this.stroke = stroke
+	}
+
+	render() {
+		// var node = document.createElement('line');
+		var node = document.createElementNS("http://www.w3.org/2000/svg",'line');
+		node.setAttribute("x1", this.x1);
+		node.setAttribute("y1", this.y1);
+		node.setAttribute("x2", this.x2);
+		node.setAttribute("y2", this.y2);
+		node.setAttribute("stroke", this.stroke);
+		return node;
+	}
+
+}
+
+var node1 = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+node1.setAttribute("id", "svg1");
+
+node1.setAttribute("width", 200);
+node1.setAttribute("height", 200);
+
+var node0 = document.getElementById("svg0");
+
+var line0 = new Line(10, 10, 100, 100, 'red').render();
+
+var line1 = new Line(100, 0, 100, 100, 'blue').render();
+line1.addEventListener('click', function(){
+	alert('blue line clicked');
+});
+// composed first
+node1.append(line1);
+
+
+
+
+onload = function() {
+
+	document.body.append(node0);
+	node0.append(line0);
+	document.body.append(node1);
+
+	class AbstractShape {
+		render() {
+
+		}
+	}
+
+
+
+}
+
+
+</script>

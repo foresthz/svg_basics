@@ -1,0 +1,17 @@
+
+<svg id="svg0">
+</svg>
+
+
+<script>
+var svg = document.getElementById('svg0'); //Get svg element
+
+var node0 = document.createElementNS("http://www.w3.org/2000/svg", 'path'); 
+// var node0 = document.createElement('path'); 
+
+node0.setAttribute("d", "M 0 0 L 100 100"); //Set path's data
+
+node0.style.stroke = "red"; 
+node0.style.strokeWidth = "2px"; 
+svg.appendChild(node0);
+</script>
